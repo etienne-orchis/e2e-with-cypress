@@ -1,5 +1,13 @@
 <div>
-  <input data-cy="email" placeholder="Email" />
-  <input data-cy="password" type="password" placeholder="Password" />
+  <input data-cy="email" [(ngModel)]="email" placeholder="Email" />
+  <input
+    data-cy="password"
+    [(ngModel)]="password"
+    type="password"
+    placeholder="Password"
+  />
   <button data-cy="login-btn" (click)="login()">Login</button>
+  @if(errorMessage){
+  <p data-cy="error-message">{{ errorMessage }}</p>
+  }
 </div>
