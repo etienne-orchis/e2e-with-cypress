@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,7 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './login.component.scss',
 })
 export class LoginComponent {
+  router = inject(Router);
   login() {
     console.log('User logged in');
+    this.router.navigate(['/dashboard']);
   }
 }
